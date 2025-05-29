@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Make One Productions | Videography Portfolio</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+  }
+  header {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #222;
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  section.about {
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  section.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    gap: 1.5rem;
+  }
+  .video-thumb {
+    background-color: #111;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255 255 255 / 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  .video-thumb:hover {
+    box-shadow: 0 0 15px #00bfff;
+  }
+  .video-thumb img {
+    width: 100%;
+    display: block;
+  }
+  .video-thumb a {
+    color: #00bfff;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  footer {
+    margin: 4rem 0 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  footer a {
+    color: #00bfff;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Make One Productions</h1>
+</header>
+
+<main>
+  <section class="about">
+    <p>Welcome to Make One Productions — your destination for professional videography showcasing cinematic visuals, storytelling, and creativity. Explore my work below.</p>
+  </section>
+
+  <section class="gallery">
+    <!-- Example video thumbnails - replace URLs & titles -->
+    <div class="video-thumb">
+      <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/VIDEO_ID_1/hqdefault.jpg" alt="Project 1 Thumbnail" />
+        Project 1
+      </a>
+    </div>
+    <div class="video-thumb">
+      <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/VIDEO_ID_2/hqdefault.jpg" alt="Project 2 Thumbnail" />
+        Project 2
+      </a>
+    </div>
+    <div class="video-thumb">
+      <a href="https://vimeo.com/VIDEO_ID_3" target="_blank" rel="noopener">
+        <img src="https://i.vimeocdn.com/video/THUMBNAIL_ID_3.jpg" alt="Project 3 Thumbnail" />
+        Project 3
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Contact: <a href="mailto:contact@makeonepro.com">contact@makeonepro.com</a></p>
+</footer>
+
+</body>
+</html>
