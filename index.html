@@ -11,117 +11,92 @@
     background-color: #000;
     color: #fff;
   }
+
   header {
-  padding: 0.5rem;
-  text-align: center;
-  border-bottom: 0.5px solid #222;
-}
-
-header img {
-  height: 60px;
-  margin: 0;
-  /* adjust height as needed */
-}
-
-  header h1 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
+    padding: 0.5rem;
+    text-align: center;
+    border-bottom: 0.5px solid #222;
   }
+
+  header img {
+    height: 360px;
+    margin: 0 auto;
+    display: block;
+  }
+
   main {
     max-width: 900px;
     margin: 2rem auto;
     padding: 0 1rem;
   }
+
   section.about {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     font-size: 1.1rem;
     line-height: 1.6;
+    text-align: center;
   }
-  section.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
-    gap: 1.5rem;
+
+  section.video-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
   }
-  .video-thumb {
-    background-color: #111;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(255 255 255 / 0.1);
-    transition: box-shadow 0.3s ease;
-  }
-  .video-thumb:hover {
-    box-shadow: 0 0 15px #00bfff;
-  }
-  .video-thumb img {
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
     width: 100%;
-    display: block;
+    max-width: 100%;
+    overflow: hidden;
   }
-  .video-thumb a {
-    color: #00bfff;
-    text-decoration: none;
-    display: block;
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-    font-size: 1rem;
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
+
   footer {
     margin: 4rem 0 2rem;
     text-align: center;
     font-size: 0.9rem;
     color: #666;
   }
+
   footer a {
     color: #00bfff;
     text-decoration: none;
   }
-
-  .video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  margin: 0 auto 3rem;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 </style>
 </head>
 <body>
 
 <header>
   <a href="/" title="Make One Productions">
-    <img src="Make One Logo Title Transparent.png" alt="Make One Productions Logo" style="height: 360px;"/>
+    <img src="Make One Logo Title Transparent.png" alt="Make One Productions Logo"/>
   </a>
 </header>
 
-
 <main>
   <section class="about">
-   
-    <p>Welcome to Make One Productions — your destination for professional videography showcasing cinematic visuals, storytelling, and creativity. Explore my work below.</p>
+    <p>Welcome to Make One Productions — your destination for cinematic visuals and storytelling. Watch our latest featured film below.</p>
   </section>
-<section class="video-player">
-  <div class="video-wrapper">
-    <iframe 
-      src="https://youtu.be/vaZq_K0ZAJk?si=aeFQH3TC7x4KZYna" 
-      frameborder="0" 
-      allow="autoplay; encrypted-media" 
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
 
-  
+  <section class="video-player">
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/vaZq_K0ZAJk?autoplay=1&mute=1&loop=1&playlist=vaZq_K0ZAJk&controls=0&rel=0&modestbranding=1" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
 </main>
 
 <footer>
