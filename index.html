@@ -76,6 +76,24 @@ header img {
     color: #00bfff;
     text-decoration: none;
   }
+
+  .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto 3rem;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 </style>
 </head>
 <body>
@@ -89,30 +107,21 @@ header img {
 
 <main>
   <section class="about">
+   
     <p>Welcome to Make One Productions — your destination for professional videography showcasing cinematic visuals, storytelling, and creativity. Explore my work below.</p>
   </section>
+<section class="video-player">
+  <div class="video-wrapper">
+    <iframe 
+      src="https://youtu.be/vaZq_K0ZAJk?si=aeFQH3TC7x4KZYna" 
+      frameborder="0" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
 
-  <section class="gallery">
-    <!-- Example video thumbnails - replace URLs & titles -->
-    <div class="video-thumb">
-      <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank" rel="noopener">
-        <img src="https://img.youtube.com/vi/VIDEO_ID_1/hqdefault.jpg" alt="Project 1 Thumbnail" />
-        Project 1
-      </a>
-    </div>
-    <div class="video-thumb">
-      <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank" rel="noopener">
-        <img src="https://img.youtube.com/vi/VIDEO_ID_2/hqdefault.jpg" alt="Project 2 Thumbnail" />
-        Project 2
-      </a>
-    </div>
-    <div class="video-thumb">
-      <a href="https://vimeo.com/VIDEO_ID_3" target="_blank" rel="noopener">
-        <img src="https://i.vimeocdn.com/video/THUMBNAIL_ID_3.jpg" alt="Project 3 Thumbnail" />
-        Project 3
-      </a>
-    </div>
-  </section>
+  
 </main>
 
 <footer>
