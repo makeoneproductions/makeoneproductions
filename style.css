@@ -11,20 +11,34 @@ img {
   height: auto;
 }
 
+/* Header */
+header {
+  padding: 1rem 0 0;
+  text-align: center;
+  border-bottom: 0.5px solid #222;
+}
+
+header img {
+  height: 180px;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
 /* NAVBAR STYLING */
 .navbar {
   background-color: #111;
-  padding: 1rem;
+  padding: 0.5rem 0 1rem;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;
   position: relative;
   z-index: 100;
-  max-width: 900px;   /* optional: limit width */
-  margin: 0 auto;     /* center navbar container on the page */
 }
 
 .navbar .nav-links {
   display: flex;
   gap: 1.5rem;
-  justify-content: center; /* center nav links horizontally */
+  justify-content: center;
 }
 
 .navbar a {
@@ -36,7 +50,7 @@ img {
 
 /* HAMBURGER ICON */
 .nav-icon {
-  display: none;  /* hide hamburger on desktop */
+  display: none;
   font-size: 2rem;
   color: #fff;
   cursor: pointer;
@@ -62,10 +76,6 @@ img {
 
 /* MOBILE STYLES */
 @media (max-width: 768px) {
-  .nav-icon {
-    display: block;  /* show hamburger on mobile */
-  }
-
   .nav-links {
     display: flex;
     flex-direction: column;
@@ -78,7 +88,6 @@ img {
     padding-top: 4rem;
     transition: right 0.3s ease-in-out;
     z-index: 150;
-    justify-content: flex-start; /* align links top on mobile */
   }
 
   .nav-links a {
@@ -94,21 +103,10 @@ img {
   .nav-toggle:checked ~ .nav-overlay {
     display: block;
   }
-}
 
-
-
-/* Header */
-header {
-  padding: 0.5rem;
-  text-align: center;
-  border-bottom: 0.5px solid #222;
-}
-
-header img {
-  height: 180px;
-  margin: 0 auto;
-  display: block;
+  .nav-icon {
+    display: block;
+  }
 }
 
 /* Main Content */
@@ -192,5 +190,3 @@ footer .social-links {
     padding: 1rem 0.5rem;
   }
 }
-
-
