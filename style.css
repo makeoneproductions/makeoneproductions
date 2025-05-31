@@ -11,24 +11,6 @@ img {
   height: auto;
 }
 
-/* Navigation Bar */
-nav {
-  background-color: #111;
-  text-align: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid #222;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-nav a {
-  display: inline-block;
-  color: #fff;
-  margin: 0 1rem;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
 /* NAVBAR STYLING */
 .navbar {
   background-color: #111;
