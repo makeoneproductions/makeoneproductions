@@ -64,10 +64,6 @@ img {
 /* MOBILE STYLES */
 @media (max-width: 768px) {
   .nav-links {
-    display: block;
-  }
-
-  .nav-links {
     display: flex;
     flex-direction: column;
     position: fixed;
