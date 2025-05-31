@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:title" content="Contact | Make One Productions" />
+  <meta property="og:description" content="Reach out to Make One Productions for cinematic wedding and commercial videography." />
+  <meta property="og:image" content="Make One Logo Title Black BG.png" />
+  <meta property="og:url" content="https://makeonepro.com/contact.html" />
+  <meta property="og:type" content="website" />
   <title>Contact | Make One Productions</title>
+
   <style>
     body {
       margin: 0;
@@ -11,107 +17,148 @@
       background-color: #000;
       color: #fff;
     }
+
     header {
-      text-align: center;
       padding: 0.5rem;
+      text-align: center;
       border-bottom: 0.5px solid #222;
     }
+
     header img {
       height: 180px;
+      margin: 0 auto;
+      display: block;
     }
+
     nav {
       background-color: #111;
       text-align: center;
       padding: 1rem 0;
       border-bottom: 1px solid #222;
     }
+
     nav a {
       color: #fff;
       margin: 0 1rem;
       text-decoration: none;
-      font-weight: 500;
     }
-    nav a:hover {
-      color: #00bfff;
-    }
+
     main {
-      max-width: 700px;
-      margin: 3rem auto;
+      max-width: 900px;
+      margin: 2rem auto;
       padding: 0 1rem;
     }
+
     h1 {
       text-align: center;
-      font-size: 2.2rem;
+      margin-bottom: 2rem;
     }
+
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
     }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
     input, textarea {
+      width: 100%;
       padding: 0.75rem;
-      font-size: 1rem;
+      margin-bottom: 1.5rem;
       border: none;
-      border-radius: 6px;
-      background: #111;
+      border-radius: 4px;
+      background-color: #222;
       color: #fff;
-      resize: vertical;
     }
-    input[type="submit"] {
+
+    input:focus, textarea:focus {
+      outline: 2px solid #00bfff;
+    }
+
+    button {
       background-color: #00bfff;
       color: #000;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
       cursor: pointer;
       font-weight: bold;
-      transition: background-color 0.3s ease;
     }
-    input[type="submit"]:hover {
-      background-color: #008ecc;
+
+    button:hover {
+      background-color: #009acd;
     }
+
     footer {
-      text-align: center;
-      padding: 2rem 0;
-      color: #666;
-      font-size: 0.9rem;
-      border-top: 1px solid #222;
       margin-top: 3rem;
+      padding: 1.5rem 1rem;
+      background-color: #111;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
     }
+
     footer a {
       color: #00bfff;
+      margin: 0 0.4rem;
       text-decoration: none;
+    }
+
+    footer .social-links {
+      margin: 0.5rem 0;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <a href="index.html">
-      <img src="Make One Logo Title Transparent Signature.PNG" alt="Make One Productions Logo" />
-    </a>
-  </header>
+<header>
+  <a href="/" title="Make One Productions">
+    <img src="Make One Logo Title Transparent Signature.PNG" alt="Make One Productions Logo" />
+  </a>
+</header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <main>
-    <h1>Contact Us</h1>
-    <form action="mailto:contact@makeonepro.com" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-      <input type="submit" value="Send Message" />
-    </form>
-  </main>
+<main>
+  <h1>Contact Us</h1>
+  <form action="mailto:contact@makeonepro.com" method="POST" enctype="text/plain">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
 
-  <footer>
-    <p>© 2025 Make One Productions | Email: <a href="mailto:contact@makeonepro.com">contact@makeonepro.com</a></p>
-  </footer>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</main>
+
+<footer>
+  <p>Contact: <a href="mailto:contact@makeonepro.com">contact@makeonepro.com</a></p>
+  <p>Based in Edmonton, Alberta</p>
+  
+  <div class="social-links">
+    <a href="https://www.youtube.com/@MakeOneProductions" target="_blank">YouTube</a> |
+    <a href="https://www.instagram.com/makeoneproductions" target="_blank">Instagram</a> |
+    <a href="https://www.facebook.com/profile.php?id=61560343884843" target="_blank">Facebook</a>
+  </div>
+
+  <p>&copy; 2025 Make One Productions. All rights reserved.</p>
+  <p><small>Disclaimer: Some videos may contain copyrighted music used under fair use for demonstration purposes only. We do not monetize these clips.</small></p>
+</footer>
 
 </body>
 </html>
-
