@@ -63,7 +63,7 @@ img {
 
 /* MOBILE STYLES */
 @media (max-width: 768px) {
-  .nav-icon {
+  .nav-links {
     display: block;
   }
 
