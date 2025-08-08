@@ -30,18 +30,42 @@
       padding: 1rem 0;
     }
     header img {height: 60px; margin-bottom: 0.5rem;}
-    .navbar .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .navbar a {
-      color: #fff;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    .navbar a:hover {color: #00bfff;}
+    .navbar {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  padding: 0 1rem;
+  border-top: 1px solid #555;    /* grey horizontal line */
+  border-bottom: 1px solid #555; /* grey horizontal line */
+  background: #111;              /* subtle dark background behind nav */
+  margin: 0 auto;
+  max-width: 600px;             /* limit width so the line doesn't stretch full width */
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.nav-links a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  z-index: 2;  /* keep links above the border */
+}
+
+.nav-links a:hover {
+  color: #ccc;
+}
+
 
     /* Main */
     main {
