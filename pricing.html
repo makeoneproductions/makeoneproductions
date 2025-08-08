@@ -9,8 +9,107 @@
   <meta property="og:url" content="https://makeonepro.com/pricing.html" />
   <meta property="og:type" content="website" />
   <title>Pricing | Make One Productions</title>
- <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Reset & Base */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {text-decoration: none; color: inherit;}
+    img {max-width: 100%; height: auto;}
 
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #000;
+    }
+    header img {height: 50px;}
+    .navbar .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .navbar a {
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .navbar a:hover {color: #00bfff;}
+
+    /* Mobile nav toggle */
+    .nav-toggle, .nav-icon, .nav-overlay {display: none;}
+
+    /* Main */
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+      text-align: center;
+    }
+    main h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #111;
+    }
+
+    /* Pricing Cards */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #00bfff;
+    }
+    .price {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .details {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .details a {color: #00bfff; font-weight: bold;}
+
+    /* Footer */
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    footer a {color: #00bfff;}
+    footer .social-links {
+      margin: 0.5rem 0;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .navbar .nav-links {display: none;}
+      .nav-toggle {display: none;} /* You can expand with mobile nav JS later */
+    }
+  </style>
 </head>
 <body>
 
@@ -19,11 +118,6 @@
     <img src="Make One Logo Title Transparent Signature.PNG" alt="Make One Productions Logo"/>
   </a>
   <nav class="navbar">
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-    <label for="nav-toggle" class="nav-icon">&#9776;</label>
-
-    <div class="nav-overlay"></div>
-
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -37,51 +131,45 @@
 
 <main>
   <h1>Our Pricing Packages</h1>
-
-  <div class="package">
-    <h2>Wedding Highlight Film</h2>
-    <p class="price">$1,500+</p>
-    <p class="details">Includes 6–8 hours of coverage, a 4–6 minute cinematic highlight film, and one videographer. Add-ons: full ceremony, speeches, drone footage.</p>
-  </div>
-
-  <div class="package">
-    <h2>Commercial Promo</h2>
-    <p class="price">$800–$2,500</p>
-    <p class="details">Perfect for brands, products, or business promos. Includes planning, filming, editing, and music licensing. Final delivery: 30–90 second video optimized for web and social media.</p>
-  </div>
-
-  <div class="package">
-    <h2>Music Video</h2>
-    <p class="price">$1,200–$3,000</p>
-    <p class="details">Custom-shot visuals that bring your track to life. Pricing varies by location, crew, props, and post-production complexity. Includes concept planning and final HD delivery.</p>
-  </div>
-
-  <div class="package">
-    <h2>Event Coverage</h2>
-    <p class="price">$500+</p>
-    <p class="details">Includes half or full-day coverage of events, performances, or conferences. Highlight reel + raw footage available upon request.</p>
-  </div>
-
-  <div class="package">
-    <h2>Custom Projects</h2>
-    <p class="price>Custom Quote</p>
-    <p class="details">We tailor pricing for documentaries, short films, and unique video requests. Let’s build something amazing together — <a href="contact.html" style="color:#00bfff;">get a custom quote</a>.</p>
+  <div class="pricing-grid">
+    <div class="card">
+      <h2>Wedding Highlight Film</h2>
+      <p class="price">$1,500+</p>
+      <p class="details">Includes 6–8 hours of coverage, a 4–6 minute cinematic highlight film, and one videographer. Add-ons: full ceremony, speeches, drone footage.</p>
+    </div>
+    <div class="card">
+      <h2>Commercial Promo</h2>
+      <p class="price">$800–$2,500</p>
+      <p class="details">Perfect for brands, products, or business promos. Includes planning, filming, editing, and music licensing. Final delivery: 30–90 second video optimized for web and social media.</p>
+    </div>
+    <div class="card">
+      <h2>Music Video</h2>
+      <p class="price">$1,200–$3,000</p>
+      <p class="details">Custom-shot visuals that bring your track to life. Pricing varies by location, crew, props, and post-production complexity. Includes concept planning and final HD delivery.</p>
+    </div>
+    <div class="card">
+      <h2>Event Coverage</h2>
+      <p class="price">$500+</p>
+      <p class="details">Includes half or full-day coverage of events, performances, or conferences. Highlight reel + raw footage available upon request.</p>
+    </div>
+    <div class="card">
+      <h2>Custom Projects</h2>
+      <p class="price">Custom Quote</p>
+      <p class="details">We tailor pricing for documentaries, short films, and unique video requests. Let’s build something amazing together — <a href="contact.html">get a custom quote</a>.</p>
+    </div>
   </div>
 </main>
 
 <footer>
   <p>Contact: <a href="mailto:contact@makeonepro.com">contact@makeonepro.com</a></p>
   <p>Based in Edmonton, Alberta</p>
-
   <div class="social-links">
     <a href="https://www.youtube.com/@MakeOneProductions" target="_blank">YouTube</a> |
     <a href="https://www.instagram.com/makeoneproductions" target="_blank">Instagram</a> |
     <a href="https://www.facebook.com/profile.php?id=61560343884843" target="_blank">Facebook</a>
   </div>
-
   <p>&copy; 2025 Make One Productions. All rights reserved.</p>
 </footer>
 
 </body>
 </html>
-
