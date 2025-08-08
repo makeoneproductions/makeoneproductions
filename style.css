@@ -173,6 +173,11 @@ main {
   padding: 0 1rem;
 }
 
+main h1 {
+  text-align: center;
+  /* you can keep or add any other styles here */
+}
+
 section.about {
   margin-bottom: 2rem;
   font-size: 1.1rem;
