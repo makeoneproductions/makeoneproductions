@@ -28,20 +28,74 @@
       align-items: center;
       padding: 1rem 0;
       text-align: center;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
     }
     header img {height: 60px; margin-bottom: 0.5rem;}
-    .navbar .nav-links {
+    .navbar {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+    }
+    .nav-toggle {
+      display: none;
+    }
+    .nav-icon {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      user-select: none;
+      color: #fff;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1rem;
+    }
+    .nav-overlay {
+      display: none;
+    }
+    .nav-links {
       display: flex;
       gap: 1.5rem;
       flex-wrap: wrap;
       justify-content: center;
     }
-    .navbar a {
+    .nav-links a {
       color: #fff;
       font-weight: bold;
       transition: color 0.3s;
     }
-    .navbar a:hover {color: #ccc;}
+    .nav-links a:hover {color: #ccc;}
+
+    /* Responsive nav toggle for mobile */
+    @media (max-width: 768px) {
+      .nav-icon {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        font-size: 1.5rem;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 10;
+      }
+      .nav-toggle:checked + .nav-icon + .nav-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.7);
+        z-index: 9;
+      }
+      .nav-toggle:checked + .nav-icon + .nav-overlay + .nav-links {
+        transform: translateY(0);
+      }
+    }
 
     /* Contact Section */
     main {
@@ -54,6 +108,9 @@
       font-size: 2.5rem;
       margin-bottom: 2rem;
       color: #fff;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.3s;
     }
     .contact-grid {
       display: grid;
@@ -125,11 +182,14 @@
       font-weight: bold;
       border-radius: 8px;
       cursor: pointer;
-      transition: transform 0.2s, background 0.3s;
+      transition: transform 0.3s, background 0.3s;
+      animation: pulseOnce 1.2s ease forwards;
+      animation-delay: 1.5s;
     }
     button:hover {
       background: #ccc;
       transform: translateY(-2px);
+      animation: none;
     }
 
     /* Contact Info */
@@ -192,20 +252,51 @@
     footer a {color: #ccc;}
     footer a:hover {color: #fff;}
     footer .social-links {margin: 0.5rem 0;}
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulseOnce {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.7);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
   <a href="/" title="Make One Productions">
-    <img src="Make One Logo Title Transparent Signature.PNG" alt="Make One Productions Logo"/>
+    <img src="Make One Logo Title Transparent Signature.PNG" alt="Make One Productions Logo" />
   </a>
   <nav class="navbar">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-icon">&#9776;</label>
+    <div class="nav-overlay"></div>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
+      <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </div>
   </nav>
@@ -218,11 +309,11 @@
     <div class="contact-form">
       <form action="mailto:contact@makeonepro.com" method="POST" enctype="text/plain">
         <div class="form-group">
-          <input type="text" name="name" placeholder=" " required>
+          <input type="text" name="name" placeholder=" " required />
           <label>Name</label>
         </div>
         <div class="form-group">
-          <input type="email" name="email" placeholder=" " required>
+          <input type="email" name="email" placeholder=" " required />
           <label>Email</label>
         </div>
         <div class="form-group">
@@ -241,21 +332,22 @@
 
       <div class="social-icons">
         <a href="https://www.youtube.com/@MakeOneProductions" target="_blank">
-          <img src="youtube-icon.png" alt="YouTube">
+          <img src="youtube-icon.png" alt="YouTube" />
         </a>
         <a href="https://www.instagram.com/makeoneproductions" target="_blank">
-          <img src="instagram-icon.jpg" alt="Instagram">
+          <img src="instagram-icon.jpg" alt="Instagram" />
         </a>
         <a href="https://www.facebook.com/profile.php?id=61560343884843" target="_blank">
-          <img src="facebook-icon.png" alt="Facebook">
+          <img src="facebook-icon.png" alt="Facebook" />
         </a>
       </div>
 
       <!-- Dark mode Google Maps -->
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.278640584713!2d-113.49092618418917!3d53.546124067406944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a022458f74c0a1%3A0x4e2c28e0b9230e1a!2sEdmonton%2C%20AB!5e0!3m2!1sen!2sca!4v1683400000000!5m2!1sen!2sca" 
-        loading="lazy" allowfullscreen>
-      </iframe>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.278640584713!2d-113.49092618418917!3d53.546124067406944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a022458f74c0a1%3A0x4e2c28e0b9230e1a!2sEdmonton%2C%20AB!5e0!3m2!1sen!2sca!4v1683400000000!5m2!1sen!2sca"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 </main>
@@ -269,7 +361,12 @@
     <a href="https://www.facebook.com/profile.php?id=61560343884843" target="_blank">Facebook</a>
   </div>
   <p>&copy; 2025 Make One Productions. All rights reserved.</p>
-  <p><small>Disclaimer: Some videos may contain copyrighted music used under fair use for demonstration purposes only. We do not monetize these clips.</small></p>
+  <p>
+    <small
+      >Disclaimer: Some videos may contain copyrighted music used under fair use for
+      demonstration purposes only. We do not monetize these clips.</small
+    >
+  </p>
 </footer>
 
 </body>
