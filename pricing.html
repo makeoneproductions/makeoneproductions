@@ -14,8 +14,8 @@
     * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
       font-family: Arial, sans-serif;
-      background: #f8f9fa;
-      color: #333;
+      background: #000;
+      color: #fff;
       line-height: 1.6;
     }
     a {text-decoration: none; color: inherit;}
@@ -24,15 +24,17 @@
     /* Header */
     header {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      padding: 1rem 2rem;
-      background: #000;
+      text-align: center;
+      padding: 1rem 0;
     }
-    header img {height: 50px;}
+    header img {height: 60px; margin-bottom: 0.5rem;}
     .navbar .nav-links {
       display: flex;
       gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .navbar a {
       color: #fff;
@@ -40,9 +42,6 @@
       transition: color 0.3s;
     }
     .navbar a:hover {color: #00bfff;}
-
-    /* Mobile nav toggle */
-    .nav-toggle, .nav-icon, .nav-overlay {display: none;}
 
     /* Main */
     main {
@@ -54,7 +53,7 @@
     main h1 {
       font-size: 2.5rem;
       margin-bottom: 2rem;
-      color: #111;
+      color: #fff;
     }
 
     /* Pricing Cards */
@@ -64,15 +63,15 @@
       gap: 1.5rem;
     }
     .card {
-      background: #fff;
+      background: #111;
       padding: 2rem;
       border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
     }
     .card h2 {
       font-size: 1.5rem;
@@ -82,12 +81,12 @@
     .price {
       font-size: 1.25rem;
       font-weight: bold;
-      color: #333;
       margin-bottom: 1rem;
+      color: #fff;
     }
     .details {
       font-size: 0.95rem;
-      color: #555;
+      color: #ccc;
     }
     .details a {color: #00bfff; font-weight: bold;}
 
@@ -98,6 +97,7 @@
       text-align: center;
       padding: 2rem 1rem;
       margin-top: 3rem;
+      border-top: 1px solid #222;
     }
     footer a {color: #00bfff;}
     footer .social-links {
@@ -106,8 +106,10 @@
 
     /* Mobile */
     @media (max-width: 768px) {
-      .navbar .nav-links {display: none;}
-      .nav-toggle {display: none;} /* You can expand with mobile nav JS later */
+      .navbar .nav-links {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
     }
   </style>
 </head>
