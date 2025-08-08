@@ -12,7 +12,84 @@
   <meta property="og:type" content="website" />
   <title>Pricing | Make One Productions</title>
   <link rel="stylesheet" href="style.css" />
-  
+  <style>
+    /* Override/add card styles and animations */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #111;
+      border-radius: 15px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.8s forwards;
+      cursor: default;
+    }
+
+    /* Stagger fade-in */
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.3s; }
+    .card:nth-child(3) { animation-delay: 0.5s; }
+    .card:nth-child(4) { animation-delay: 0.7s; }
+    .card:nth-child(5) { animation-delay: 0.9s; }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.8);
+      background: #222;
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #eee;
+    }
+
+    .details {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.4;
+    }
+
+    .details a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+
+    .details a:hover {
+      color: #bbb;
+    }
+
+    /* Fade-in animation keyframes */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
 
