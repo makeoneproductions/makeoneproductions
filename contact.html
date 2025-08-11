@@ -10,18 +10,30 @@
   <meta property="og:type" content="website" />
   <title>Contact | Make One Productions</title>
   <link rel="stylesheet" href="style.css" />
-
   <style>
     /* Reset */
-    * {margin: 0; padding: 0; box-sizing: border-box;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: #000;
       color: #fff;
       line-height: 1.6;
     }
-    a {text-decoration: none; color: inherit;}
-    img {max-width: 100%; height: auto;}
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
     /* Header */
     header {
@@ -30,83 +42,147 @@
       align-items: center;
       padding: 1rem 0;
       text-align: center;
-      opacity: 0;
-      animation: fadeInUp 0.8s ease forwards;
+      /* Removed opacity animation for consistency, add if desired */
     }
-    header img {height: 60px; margin-bottom: 0.5rem;}
-  
-.nav-links a {
-  color: #fff;
-  font-weight: bold;
-  padding: 0.5rem 0;
-  position: relative;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  z-index: 2;  /* keep links above the border */
-}
 
-.nav-links a:hover {
-  color: #ccc;
-}
+    header img {
+      height: 60px;
+      margin-bottom: 0.5rem;
+    }
 
+    /* Navbar */
+    .navbar {
+      background-color: #111;
+      padding: 1rem;
+      display: flex;
+      justify-content: center; /* center nav below logo */
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 100;
+      width: 100%;
+      max-width: 1000px;
+    }
 
-    /* Responsive nav toggle for mobile */
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+    /* Hamburger Icon */
+    .nav-icon {
+      display: none;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      z-index: 200;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* Hide checkbox */
+    .nav-toggle {
+      display: none;
+    }
+
+    /* Overlay */
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 99;
+    }
+
+    /* Mobile Styles */
     @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 75%;
+        background-color: #111;
+        padding-top: 4rem;
+        transition: right 0.3s ease-in-out;
+        z-index: 150;
+      }
+
+      .nav-links a {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid #222;
+        font-size: 1.25rem;
+      }
+
+      /* Show hamburger */
       .nav-icon {
         display: block;
       }
-      .nav-links {
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0,0,0,0.95);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        font-size: 1.5rem;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
-        z-index: 10;
+
+      /* When toggle is checked */
+      .nav-toggle:checked ~ .nav-links {
+        right: 0;
       }
-      .nav-toggle:checked + .nav-icon + .nav-overlay {
+
+      .nav-toggle:checked ~ .nav-overlay {
         display: block;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.7);
-        z-index: 9;
-      }
-      .nav-toggle:checked + .nav-icon + .nav-overlay + .nav-links {
-        transform: translateY(0);
       }
     }
 
-    /* Contact Section */
+    /* Main content */
     main {
       max-width: 1200px;
       margin: auto;
-      padding: 3rem 1rem;
+      padding: 3rem 1rem 2rem;
+      padding-top: 2rem; /* added spacing so h1 is below nav on mobile */
     }
-    h1 {
+
+    main h1 {
       text-align: center;
       font-size: 2.5rem;
       margin-bottom: 2rem;
       color: #fff;
-      opacity: 0;
-      animation: fadeInUp 1s ease forwards;
-      animation-delay: 0.3s;
     }
+
+    @media (max-width: 768px) {
+      main h1 {
+        margin-top: 1.5rem;
+      }
+    }
+
+    /* Contact Grid */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
+
     @media (max-width: 768px) {
       .contact-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    /* Form */
+    /* Form Styles */
     .contact-form {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
@@ -114,10 +190,12 @@
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.4);
     }
+
     .form-group {
       position: relative;
       margin-bottom: 1.5rem;
     }
+
     .form-group input,
     .form-group textarea {
       width: 100%;
@@ -131,6 +209,7 @@
       resize: none;
       transition: border 0.3s;
     }
+
     .form-group label {
       position: absolute;
       top: 50%;
@@ -141,10 +220,12 @@
       pointer-events: none;
       transition: all 0.3s ease;
     }
+
     .form-group input:focus,
     .form-group textarea:focus {
       border-color: #ccc;
     }
+
     .form-group input:focus + label,
     .form-group input:not(:placeholder-shown) + label,
     .form-group textarea:focus + label,
@@ -156,6 +237,7 @@
       background: #000;
       padding: 0 4px;
     }
+
     button {
       width: 100%;
       padding: 1rem;
@@ -166,13 +248,11 @@
       border-radius: 8px;
       cursor: pointer;
       transition: transform 0.3s, background 0.3s;
-      animation: pulseOnce 1.2s ease forwards;
-      animation-delay: 1.5s;
     }
+
     button:hover {
       background: #ccc;
       transform: translateY(-2px);
-      animation: none;
     }
 
     /* Contact Info */
@@ -181,22 +261,27 @@
       flex-direction: column;
       gap: 1rem;
     }
+
     .contact-info h3 {
       margin-bottom: 0.5rem;
       color: #fff;
     }
+
     .contact-info p a {
       color: #ccc;
       transition: color 0.3s;
     }
+
     .contact-info p a:hover {
       color: #fff;
     }
+
     .social-icons {
       display: flex;
       gap: 1rem;
       margin-top: 0.5rem;
     }
+
     .social-icons a {
       display: inline-flex;
       align-items: center;
@@ -207,14 +292,17 @@
       border-radius: 50%;
       transition: background 0.3s, transform 0.3s;
     }
+
     .social-icons a:hover {
       background: #333;
       transform: scale(1.1);
     }
+
     .social-icons img {
       width: 20px;
       filter: invert(1);
     }
+
     iframe {
       border: none;
       border-radius: 15px;
@@ -232,35 +320,17 @@
       margin-top: 3rem;
       border-top: 1px solid #222;
     }
-    footer a {color: #ccc;}
-    footer a:hover {color: #fff;}
-    footer .social-links {margin: 0.5rem 0;}
 
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    footer a {
+      color: #ccc;
     }
 
-    @keyframes pulseOnce {
-      0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-      }
-      50% {
-        transform: scale(1.05);
-        box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.7);
-      }
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-      }
+    footer a:hover {
+      color: #fff;
+    }
+
+    footer .social-links {
+      margin: 0.5rem 0;
     }
   </style>
 </head>
@@ -279,7 +349,7 @@
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
     </div>
   </nav>
 </header>
