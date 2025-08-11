@@ -42,7 +42,6 @@
       align-items: center;
       padding: 1rem 0;
       text-align: center;
-      /* Removed opacity animation for consistency, add if desired */
     }
 
     header img {
@@ -55,7 +54,7 @@
       background-color: #111;
       padding: 1rem;
       display: flex;
-      justify-content: center; /* center nav below logo */
+      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       position: relative;
@@ -89,10 +88,13 @@
       color: #fff;
       cursor: pointer;
       z-index: 200;
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
+
+      /* Remove absolute positioning */
+      position: relative;
+      margin: 0 auto; /* Center horizontally */
+      top: auto;
+      right: auto;
+      transform: none;
     }
 
     /* Hide checkbox */
@@ -153,7 +155,7 @@
       max-width: 1200px;
       margin: auto;
       padding: 3rem 1rem 2rem;
-      padding-top: 2rem; /* added spacing so h1 is below nav on mobile */
+      padding-top: 2rem;
     }
 
     main h1 {
