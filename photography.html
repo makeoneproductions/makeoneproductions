@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:title" content="Photography | Make One Productions" />
+  <meta property="og:description" content="Explore the photography portfolio of Make One Productions – showcasing stunning visuals and creative shots." />
+  <meta property="og:image" content="Make One Logo Title Black BG.png" />
+  <meta property="og:url" content="https://makeonepro.com/photography.html" />
+  <meta property="og:type" content="website" />
+  <title>Photography | Make One Productions</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Gallery Grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+    }
+
+    .photo-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Optional captions */
+    .caption {
+      color: #ccc;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+        padding: 0 0.5rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" title="Make One Productions">
+    <img src="Make One Logo Title Transparent Signature.PNG" alt="Make One Productions Logo" />
+  </a>
+  <nav class="navbar">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-icon">&#9776;</label>
+    <div class="nav-overlay"></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="photography.html" class="active">Photography</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <h1 style="text-align: center; margin-top: 2rem;">Photography Portfolio</h1>
+  <p style="max-width: 700px; margin: 0.5rem auto 2rem auto; text-align: center; color: #aaa;">
+    A selection of photos captured by Make One Productions, showcasing creative vision and diverse styles.
+  </p>
+
+  <section class="photo-grid">
+    <figure>
+      <img src="photos/photo1.jpg" alt="Sunset over the mountains" />
+      <figcaption class="caption">Sunset over the mountains</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/photo2.jpg" alt="City skyline at night" />
+      <figcaption class="caption">City skyline at night</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/photo3.jpg" alt="Black and white portrait" />
+      <figcaption class="caption">Black and white portrait</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/photo4.jpg" alt="Macro shot of flower" />
+      <figcaption class="caption">Macro shot of flower</figcaption>
+    </figure>
+    <!-- Add more photos as needed -->
+  </section>
+</main>
+
+<footer>
+  <p>Contact: <a href="mailto:contact@makeonepro.com">contact@makeonepro.com</a></p>
+  <p>Based in Edmonton, Alberta</p>
+  <div class="social-links">
+    <a href="https://www.youtube.com/@MakeOneProductions" target="_blank">YouTube</a> |
+    <a href="https://www.instagram.com/makeoneproductions" target="_blank">Instagram</a> |
+    <a href="https://www.facebook.com/profile.php?id=61560343884843" target="_blank">Facebook</a>
+  </div>
+  <p>&copy; 2025 Make One Productions. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
