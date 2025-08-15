@@ -49,106 +49,110 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Navbar */
-    .navbar {
-      background-color: #111;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 100;
-      width: 100%;
-      max-width: 1000px;
-    }
+   /* Header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  text-align: center;
+  background-color: #111; /* Grey/dark background full width */
+  width: 100%;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
+header img {
+  height: 60px;
+  margin-bottom: 0.5rem;
+}
 
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1rem;
-      white-space: nowrap;
-      font-weight: 600;
-    }
+/* Navbar */
+.navbar {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+}
 
-    .nav-links a.active,
-    .nav-links a:hover {
-      color: #00bfff;
-    }
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
 
-    /* Hamburger Icon */
-    .nav-icon {
-      display: none;
-      font-size: 2rem;
-      color: #fff;
-      cursor: pointer;
-      z-index: 200;
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  white-space: nowrap;
+  font-weight: 600;
+}
 
-      /* Remove absolute positioning */
-      position: relative;
-      margin: 0 auto; /* Center horizontally */
-      top: auto;
-      right: auto;
-      transform: none;
-    }
+.nav-links a:hover {
+  color: #00bfff;
+}
 
-    /* Hide checkbox */
-    .nav-toggle {
-      display: none;
-    }
+/* Hamburger Icon */
+.nav-icon {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 200;
+  position: relative;
+  margin: 0 auto; /* Center horizontally */
+}
 
-    /* Overlay */
-    .nav-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 99;
-    }
+.nav-toggle {
+  display: none;
+}
 
-    /* Mobile Styles */
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100%;
-        width: 75%;
-        background-color: #111;
-        padding-top: 4rem;
-        transition: right 0.3s ease-in-out;
-        z-index: 150;
-      }
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+}
 
-      .nav-links a {
-        padding: 1rem 1.5rem;
-        border-bottom: 1px solid #222;
-        font-size: 1.25rem;
-      }
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 75%;
+    background-color: #111;
+    padding-top: 4rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 150;
+  }
 
-      /* Show hamburger */
-      .nav-icon {
-        display: block;
-      }
+  .nav-links a {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #222;
+    font-size: 1.25rem;
+  }
 
-      /* When toggle is checked */
-      .nav-toggle:checked ~ .nav-links {
-        right: 0;
-      }
+  .nav-icon {
+    display: block;
+  }
 
-      .nav-toggle:checked ~ .nav-overlay {
-        display: block;
-      }
-    }
+  .nav-toggle:checked ~ .nav-links {
+    right: 0;
+  }
+
+  .nav-toggle:checked ~ .nav-overlay {
+    display: block;
+  }
+}
+
 
     /* Main content */
     main {
