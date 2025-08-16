@@ -25,15 +25,8 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; }
 
     /* Header */
     header {
@@ -45,7 +38,6 @@
       z-index: 1000;
     }
 
-    /* Match homepage logo size */
     header img {
       height: 180px;
       margin-bottom: 0.5rem;
@@ -53,7 +45,7 @@
 
     /* Navbar strip (match homepage) */
     nav.navbar {
-      background-color: #111; /* darker grey strip */
+      background-color: #111;
       width: 100%;
       padding: 0.5rem 0;
       position: relative;
@@ -77,10 +69,7 @@
       font-weight: 600;
     }
 
-    /* Hover only (no blue active) */
-    .nav-links a:hover {
-      color: #00bfff;
-    }
+    .nav-links a:hover { color: #00bfff; }
 
     /* Hamburger Icon */
     .nav-icon {
@@ -89,16 +78,14 @@
       color: #fff;
       cursor: pointer;
       position: absolute;
-      right: 1rem;
+      right: 50%;
+      transform: translateX(50%);
       top: 50%;
-      transform: translateY(-50%);
+      transform: translate(50%, -50%);
       z-index: 200;
     }
 
-    .nav-toggle {
-      display: none;
-    }
-
+    .nav-toggle { display: none; }
     .nav-overlay {
       display: none;
       position: fixed;
@@ -106,7 +93,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0,0,0,0.6);
       z-index: 99;
     }
 
@@ -131,17 +118,10 @@
         font-size: 1.25rem;
       }
 
-      .nav-icon {
-        display: block;
-      }
+      .nav-icon { display: block; }
 
-      .nav-toggle:checked ~ .nav-links {
-        right: 0;
-      }
-
-      .nav-toggle:checked ~ .nav-overlay {
-        display: block;
-      }
+      .nav-toggle:checked ~ .nav-links { right: 0; }
+      .nav-toggle:checked ~ .nav-overlay { display: block; }
     }
 
     /* Main content */
@@ -160,9 +140,7 @@
     }
 
     @media (max-width: 768px) {
-      main h1 {
-        margin-top: 1.5rem;
-      }
+      main h1 { margin-top: 1.5rem; }
     }
 
     /* Contact Grid */
@@ -173,14 +151,12 @@
     }
 
     @media (max-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+      .contact-grid { grid-template-columns: 1fr; }
     }
 
     /* Form Styles */
     .contact-form {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255,255,255,0.05);
       backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 15px;
@@ -218,9 +194,7 @@
     }
 
     .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: #ccc;
-    }
+    .form-group textarea:focus { border-color: #ccc; }
 
     .form-group input:focus + label,
     .form-group input:not(:placeholder-shown) + label,
@@ -258,19 +232,10 @@
       gap: 1rem;
     }
 
-    .contact-info h3 {
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
+    .contact-info h3 { margin-bottom: 0.5rem; color: #fff; }
 
-    .contact-info p a {
-      color: #ccc;
-      transition: color 0.3s;
-    }
-
-    .contact-info p a:hover {
-      color: #fff;
-    }
+    .contact-info p a { color: #ccc; transition: color 0.3s; }
+    .contact-info p a:hover { color: #fff; }
 
     .social-icons {
       display: flex;
@@ -289,15 +254,8 @@
       transition: background 0.3s, transform 0.3s;
     }
 
-    .social-icons a:hover {
-      background: #333;
-      transform: scale(1.1);
-    }
-
-    .social-icons img {
-      width: 20px;
-      filter: invert(1);
-    }
+    .social-icons a:hover { background: #333; transform: scale(1.1); }
+    .social-icons img { width: 20px; filter: invert(1); }
 
     iframe {
       border: none;
@@ -317,17 +275,10 @@
       border-top: 1px solid #222;
     }
 
-    footer a {
-      color: #ccc;
-    }
+    footer a { color: #ccc; }
+    footer a:hover { color: #fff; }
+    footer .social-links { margin: 0.5rem 0; }
 
-    footer a:hover {
-      color: #fff;
-    }
-
-    footer .social-links {
-      margin: 0.5rem 0;
-    }
   </style>
 </head>
 <body>
@@ -354,7 +305,6 @@
 <main>
   <h1>Contact Us</h1>
   <div class="contact-grid">
-    <!-- Form -->
     <div class="contact-form">
       <form action="mailto:contact@makeonepro.com" method="POST" enctype="text/plain">
         <div class="form-group">
@@ -373,7 +323,6 @@
       </form>
     </div>
 
-    <!-- Info -->
     <div class="contact-info">
       <h3>Contact Details</h3>
       <p>Email: <a href="mailto:contact@makeonepro.com">contact@makeonepro.com</a></p>
