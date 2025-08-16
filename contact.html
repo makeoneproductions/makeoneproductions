@@ -1,340 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta property="og:title" content="Contact | Make One Productions" />
-  <meta property="og:description" content="Reach out to Make One Productions for cinematic wedding and commercial videography." />
-  <meta property="og:image" content="Make One Logo Title Black BG.png" />
-  <meta property="og:url" content="https://makeonepro.com/contact.html" />
-  <meta property="og:type" content="website" />
-  <title>Contact | Make One Productions</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Make One Productions | Contact" />
+<meta property="og:description" content="Get in touch with Make One Productions for wedding and commercial videography inquiries." />
+<meta property="og:image" content="Make One Logo Title Black BG.png" />
+<meta property="og:url" content="https://makeonepro.com/contact.html" />
+<meta property="og:type" content="website" />
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #000;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    header img {
-      height: 60px;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Navbar strip */
-    nav.navbar {
-      background-color: #333; /* Grey strip */
-      width: 100%;
-      padding: 0.5rem 0;
-      position: relative;
-      z-index: 100;
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    /* Remove blue active highlight — hover only */
-    .nav-links a:hover {
-      color: #00bfff;
-    }
-
-    /* Hamburger Icon */
-    .nav-icon {
-      display: none;
-      font-size: 2rem;
-      color: #fff;
-      cursor: pointer;
-      z-index: 200;
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .nav-toggle {
-      display: none;
-    }
-
-    .nav-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 99;
-    }
-
-    /* Mobile Styles */
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100%;
-        width: 75%;
-        background-color: #111;
-        padding-top: 4rem;
-        transition: right 0.3s ease-in-out;
-        z-index: 150;
-      }
-
-      .nav-links a {
-        padding: 1rem 1.5rem;
-        border-bottom: 1px solid #222;
-        font-size: 1.25rem;
-      }
-
-      .nav-icon {
-        display: block;
-      }
-
-      .nav-toggle:checked ~ .nav-links {
-        right: 0;
-      }
-
-      .nav-toggle:checked ~ .nav-overlay {
-        display: block;
-      }
-    }
-
-    /* Main content */
-    main {
-      max-width: 1200px;
-      margin: auto;
-      padding: 3rem 1rem 2rem;
-      padding-top: 2rem;
-    }
-
-    main h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #fff;
-    }
-
-    @media (max-width: 768px) {
-      main h1 {
-        margin-top: 1.5rem;
-      }
-    }
-
-    /* Contact Grid */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    @media (max-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Form Styles */
-    .contact-form {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    }
-
-    .form-group {
-      position: relative;
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 1rem;
-      background: transparent;
-      border: 1px solid #555;
-      border-radius: 8px;
-      color: #fff;
-      font-size: 1rem;
-      outline: none;
-      resize: none;
-      transition: border 0.3s;
-    }
-
-    .form-group label {
-      position: absolute;
-      top: 50%;
-      left: 1rem;
-      transform: translateY(-50%);
-      color: #aaa;
-      font-size: 0.95rem;
-      pointer-events: none;
-      transition: all 0.3s ease;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: #ccc;
-    }
-
-    .form-group input:focus + label,
-    .form-group input:not(:placeholder-shown) + label,
-    .form-group textarea:focus + label,
-    .form-group textarea:not(:placeholder-shown) + label {
-      top: -8px;
-      left: 8px;
-      font-size: 0.75rem;
-      color: #ccc;
-      background: #000;
-      padding: 0 4px;
-    }
-
-    button {
-      width: 100%;
-      padding: 1rem;
-      border: none;
-      background: #fff;
-      color: #000;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    button:hover {
-      background: #ccc;
-      transform: translateY(-2px);
-    }
-
-    /* Contact Info */
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .contact-info h3 {
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-
-    .contact-info p a {
-      color: #ccc;
-      transition: color 0.3s;
-    }
-
-    .contact-info p a:hover {
-      color: #fff;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .social-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: #111;
-      border-radius: 50%;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .social-icons a:hover {
-      background: #333;
-      transform: scale(1.1);
-    }
-
-    .social-icons img {
-      width: 20px;
-      filter: invert(1);
-    }
-
-    iframe {
-      border: none;
-      border-radius: 15px;
-      width: 100%;
-      height: 250px;
-      margin-top: 1rem;
-    }
-
-    /* Footer */
-    footer {
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-      border-top: 1px solid #222;
-    }
-
-    footer a {
-      color: #ccc;
-    }
-
-    footer a:hover {
-      color: #fff;
-    }
-
-    footer .social-links {
-      margin: 0.5rem 0;
-    }
-  </style>
+<title>Contact | Make One Productions</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header>
   <a href="/" title="Make One Productions">
-    <img src="Make One Logo Title Transparent Signature.PNG" alt="Make One Productions Logo" />
+    <img src="Make One Logo Title Transparent Signature.PNG" alt="Make One Productions Logo"/>
   </a>
   <nav class="navbar">
     <input type="checkbox" id="nav-toggle" class="nav-toggle" />
     <label for="nav-toggle" class="nav-icon">&#9776;</label>
+
     <div class="nav-overlay"></div>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -346,68 +36,42 @@
   </nav>
 </header>
 
+<!-- Grey strip just for menu items -->
+<div class="nav-strip"></div>
+
 <main>
-  <h1>Contact Us</h1>
-  <div class="contact-grid">
-    <!-- Form -->
-    <div class="contact-form">
-      <form action="mailto:contact@makeonepro.com" method="POST" enctype="text/plain">
-        <div class="form-group">
-          <input type="text" name="name" placeholder=" " required />
-          <label>Name</label>
-        </div>
-        <div class="form-group">
-          <input type="email" name="email" placeholder=" " required />
-          <label>Email</label>
-        </div>
-        <div class="form-group">
-          <textarea name="message" rows="6" placeholder=" " required></textarea>
-          <label>Message</label>
-        </div>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
+  <section class="contact-section">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you! Fill out the form below and we’ll get back to you as soon as possible.</p>
 
-    <!-- Info -->
-    <div class="contact-info">
-      <h3>Contact Details</h3>
-      <p>Email: <a href="mailto:contact@makeonepro.com">contact@makeonepro.com</a></p>
-      <p>Based in Edmonton, Alberta</p>
+    <form class="contact-form" action="mailto:contact@makeonepro.com" method="post" enctype="text/plain">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
 
-      <div class="social-icons">
-        <a href="https://www.youtube.com/@MakeOneProductions" target="_blank">
-          <img src="youtube-icon.png" alt="YouTube" />
-        </a>
-        <a href="https://www.instagram.com/makeoneproductions" target="_blank">
-          <img src="instagram-icon.jpg" alt="Instagram" />
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61560343884843" target="_blank">
-          <img src="facebook-icon.png" alt="Facebook" />
-        </a>
-      </div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
 
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.278640584713!2d-113.49092618418917!3d53.546124067406944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a022458f74c0a1%3A0x4e2c28e0b9230e1a!2sEdmonton%2C%20AB!5e0!3m2!1sen!2sca!4v1683400000000!5m2!1sen!2sca"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 </main>
 
 <footer>
   <p>Contact: <a href="mailto:contact@makeonepro.com">contact@makeonepro.com</a></p>
   <p>Based in Edmonton, Alberta</p>
+  
   <div class="social-links">
     <a href="https://www.youtube.com/@MakeOneProductions" target="_blank">YouTube</a> |
     <a href="https://www.instagram.com/makeoneproductions" target="_blank">Instagram</a> |
     <a href="https://www.facebook.com/profile.php?id=61560343884843" target="_blank">Facebook</a>
   </div>
+
   <p>&copy; 2025 Make One Productions. All rights reserved.</p>
-  <p>
-    <small>Disclaimer: Some videos may contain copyrighted music used under fair use for
-    demonstration purposes only. We do not monetize these clips.</small>
-  </p>
+
+  <p><small>Disclaimer: Some videos may contain copyrighted music used under fair use for demonstration purposes only. We do not monetize these clips.</small></p>
 </footer>
 
 </body>
