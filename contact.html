@@ -43,18 +43,21 @@
       text-align: center;
     }
 
+    /* Match homepage logo size */
     header img {
-      height: 60px;
+      height: 180px;
       margin-bottom: 0.5rem;
     }
 
-    /* Navbar strip */
+    /* Navbar strip (match homepage) */
     nav.navbar {
-      background-color: #333; /* Grey strip */
+      background-color: #111; /* darker grey strip */
       width: 100%;
       padding: 0.5rem 0;
       position: relative;
       z-index: 100;
+      border-top: 1px solid #555;
+      border-bottom: 1px solid #555;
     }
 
     .nav-links {
@@ -72,7 +75,7 @@
       font-weight: 600;
     }
 
-    /* Remove blue active highlight — hover only */
+    /* Hover only (no blue active) */
     .nav-links a:hover {
       color: #00bfff;
     }
