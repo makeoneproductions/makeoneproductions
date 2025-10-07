@@ -42,11 +42,12 @@ nav.scrolled {
 .nav-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 1.2rem 3rem;
+    padding: 1rem 3rem;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    min-height: 70px;
+    height: 80px;
 }
 
 .logo {
@@ -54,11 +55,13 @@ nav.scrolled {
     align-items: center;
     text-decoration: none;
     transition: opacity 0.3s ease;
+    flex-shrink: 0;
 }
 
 .logo img {
-    height: 50px;
+    height: 55px;
     width: auto;
+    display: block;
     transition: transform 0.3s ease;
 }
 
@@ -72,6 +75,7 @@ nav.scrolled {
 
 .nav-links {
     display: flex;
+    flex-direction: row;
     gap: 2.5rem;
     list-style: none;
     margin: 0;
@@ -82,17 +86,19 @@ nav.scrolled {
 .nav-links li {
     margin: 0;
     padding: 0;
+    display: inline-block;
 }
 
 .nav-links a {
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 400;
     transition: color 0.3s ease;
     position: relative;
     display: inline-block;
     padding: 0.5rem 0;
+    white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -604,11 +610,11 @@ footer {
 @media (max-width: 768px) {
     .nav-container {
         padding: 1rem 2rem;
-        min-height: 60px;
+        height: 70px;
     }
 
-    .logo {
-        font-size: 0.9rem;
+    .logo img {
+        height: 45px;
     }
 
     .nav-links {
