@@ -1,84 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photography | Make One Productions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:title" content="Photography | Make One Productions" />
+  <meta property="og:description" content="Explore the photography portfolio of Make One Productions – showcasing stunning visuals and creative shots." />
+  <meta property="og:image" content="Make One Logo Title Black BG.png" />
+  <meta property="og:url" content="https://makeonepro.com/photography.html" />
+  <meta property="og:type" content="website" />
+  <title>Photography | Make One Productions</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Gallery Grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+    }
+
+    .photo-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Optional captions */
+    .caption {
+      color: #ccc;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+        padding: 0 0.5rem;
+      }
+    }
+
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">MAKE ONE PRODUCTIONS</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="photography.html">Photography</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div>
-            <h1>Photography</h1>
-            <p>Capturing moments that tell your unique story</p>
-        </div>
-    </section>
-
-    <!-- Page Content -->
-    <div class="page-content">
-        <section class="content-section">
-            <h2>Our Photography Services</h2>
-            <p>From intimate portraits to large-scale events, we approach every photography project with the same dedication to quality and storytelling. Our photography combines technical precision with artistic vision to create images that resonate.</p>
-            <p>Whether it's wedding photography, corporate headshots, event coverage, or commercial work, we ensure every shot captures the emotion, energy, and essence of the moment.</p>
-        </section>
-
-        <!-- Photography Gallery -->
-        <div class="photo-gallery">
-            <div class="photo-item">
-                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800" alt="Wedding Photography">
-            </div>
-            <div class="photo-item">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800" alt="Event Photography">
-            </div>
-            <div class="photo-item">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800" alt="Portrait Photography">
-            </div>
-            <div class="photo-item">
-                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800" alt="Commercial Photography">
-            </div>
-            <div class="photo-item">
-                <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800" alt="Landscape Photography">
-            </div>
-            <div class="photo-item">
-                <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=800" alt="Product Photography">
-            </div>
-        </div>
+<header>
+  <a href="/" title="Make One Productions">
+    <img src="Make One Logo Title Transparent Signature.PNG" alt="Make One Productions Logo" />
+  </a>
+  <nav class="navbar">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-icon">&#9776;</label>
+    <div class="nav-overlay"></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="photography.html">Photography</a>
+      <a href="pricing.html">Pricing</a>
+     
+      <a href="contact.html">Contact</a>
+      
     </div>
+  </nav>
+</header>
 
-    <!-- Contact CTA Section -->
-    <section class="contact-section">
-        <div class="contact-content">
-            <h2>Book Your Session</h2>
-            <p>Ready to capture your story? Let's discuss your photography needs.</p>
-            <a href="contact.html" class="cta-button">Get In Touch</a>
-        </div>
-    </section>
+<main>
+  <h1 style="text-align: center; margin-top: 2rem;">Photography Portfolio</h1>
+  <p style="max-width: 700px; margin: 0.5rem auto 2rem auto; text-align: center; color: #aaa;">
+    A selection of photos captured by Make One Productions.
+  </p>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Make One Productions. All rights reserved.</p>
-    </footer>
+  <section class="photo-grid">
+    <figure>
+      <img src="Alyssa_Aiden_pic1.jpeg" alt="Couples photoshoot in the country." />
+      <figcaption class="caption">Couples photoshoot in the country.</figcaption>
+    </figure>
+    <figure>
+      <img src="Alyssa_Aiden_pic2.jpeg" alt="Couples photoshoot in the country." />
+      <figcaption class="caption">Couples photoshoot in the country.</figcaption>
+    </figure>
+    <!-- Add more photos as needed -->
+  </section>
+</main>
 
-    <script src="script.js"></script>
+<footer>
+  <p>Contact: <a href="mailto:contact@makeonepro.com">contact@makeonepro.com</a></p>
+  <p>Based in Edmonton, Alberta</p>
+  <div class="social-links">
+    <a href="https://www.youtube.com/@MakeOneProductions" target="_blank">YouTube</a> |
+    <a href="https://www.instagram.com/makeoneproductions" target="_blank">Instagram</a> |
+    <a href="https://www.facebook.com/profile.php?id=61560343884843" target="_blank">Facebook</a>
+  </div>
+  <p>&copy; 2025 Make One Productions. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
