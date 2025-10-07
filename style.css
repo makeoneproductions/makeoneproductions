@@ -50,17 +50,24 @@ nav.scrolled {
 }
 
 .logo {
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: var(--accent);
+    display: flex;
+    align-items: center;
     text-decoration: none;
     transition: opacity 0.3s ease;
-    white-space: nowrap;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    opacity: 0.7;
+    opacity: 0.8;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
 }
 
 .nav-links {
